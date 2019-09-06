@@ -1,4 +1,4 @@
-package models;
+package com.storebook.Storebook.models;
 
 import javax.persistence.*;
 import java.math.BigInteger;

@@ -36,21 +36,6 @@ public class Media {
         return id;
     }
 
-    @OneToOne(mappedBy = "media")
-    private User user;
-
-    @OneToOne(mappedBy = "media")
-    private Author author;
-
-    @OneToOne(mappedBy = "media")
-    private Category category;
-
-    @OneToOne(mappedBy = "media")
-    private PaymentMethod paymentMethod;
-
-    @OneToOne(mappedBy = "media")
-    private Product product;
-
     public Media(){}
     public Media(String path, BigInteger size) {
         this.path = path;

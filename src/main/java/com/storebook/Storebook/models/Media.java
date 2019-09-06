@@ -7,7 +7,7 @@ import java.math.BigInteger;
 @Table(name = "media")
 public class Media {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY);
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "path")

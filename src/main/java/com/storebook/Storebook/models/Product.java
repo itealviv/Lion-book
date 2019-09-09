@@ -1,7 +1,10 @@
 package com.storebook.Storebook.models;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "products")
 public class Product {
@@ -29,6 +32,9 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "media_id")
     private Media media;
+
+    public Product() {
+    }
 
     public Product(double price, String title, String description, Category category, Author author, Media media) {
         this.price = price;

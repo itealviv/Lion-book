@@ -1,8 +1,10 @@
 package com.storebook.Storebook.models;
 
-import javax.persistence.*;
-import java.math.BigInteger;
+import lombok.Data;
 
+import javax.persistence.*;
+
+@Data
 @Entity
 @Table(name = "media")
 public class Media {
@@ -14,7 +16,12 @@ public class Media {
     private String path;
 
     @Column(name = "size")
-    private BigInteger size;
+    private int size;
+
+    public Media(String asd, int i) {
+        this.path = asd;
+        this.size = i;
+    }
 
     public String getPath() {
         return path;
@@ -24,11 +31,11 @@ public class Media {
         this.path = path;
     }
 
-    public BigInteger getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(BigInteger size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
@@ -37,10 +44,7 @@ public class Media {
     }
 
     public Media(){}
-    public Media(String path, BigInteger size) {
-        this.path = path;
-        this.size = size;
-    }
+
 
     @Override
     public String toString() {

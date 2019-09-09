@@ -1,3 +1,4 @@
+/*
 package com.storebook.Storebook.utils;
 
 import com.storebook.Storebook.models.*;
@@ -30,3 +31,4 @@ public class HibernateSessionFactoryUtil {
         return sessionFactory;
     }
 }
+*/

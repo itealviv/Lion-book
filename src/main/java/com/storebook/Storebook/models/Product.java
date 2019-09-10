@@ -21,7 +21,7 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 
@@ -31,7 +31,7 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "media_id")
-    private Media media;
+    private Media media;*/
 
     public Product() {
     }
@@ -40,9 +40,9 @@ public class Product {
         this.price = price;
         this.title = title;
         this.description = description;
-        this.category = category;
+        /*this.category = category;
         this.author = author;
-        this.media = media;
+        this.media = media;*/
     }
 
     public double getPrice() {
@@ -69,29 +69,29 @@ public class Product {
         this.description = description;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
-    public Media getMedia() {
-        return media;
-    }
-
-    public void setMedia(Media media) {
-        this.media = media;
-    }
+//    public Category getCategory() {
+//        return category;
+//    }
+//
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+//
+//    public Author getAuthor() {
+//        return author;
+//    }
+//
+//    public void setAuthor(Author author) {
+//        this.author = author;
+//    }
+//
+//    public Media getMedia() {
+//        return media;
+//    }
+//
+//    public void setMedia(Media media) {
+//        this.media = media;
+//    }
 
     public int getId() {
         return id;

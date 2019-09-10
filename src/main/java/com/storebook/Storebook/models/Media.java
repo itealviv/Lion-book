@@ -1,16 +1,20 @@
 package com.storebook.Storebook.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "media")
-public class Media {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Media implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
 
     @Column(name = "path")
     private String path;
@@ -30,7 +34,6 @@ public class Media {
     public void setPath(String path) {
         this.path = path;
     }
-
     public int getSize() {
         return size;
     }
@@ -38,16 +41,14 @@ public class Media {
     public void setSize(int size) {
         this.size = size;
     }
-
     public int getId() {
         return id;
     }
 
     public Media(){}
 
-
     @Override
     public String toString() {
-        return path;
+        return String.format("{\"id\":\"%s\", \"path\":\"%s\", \"size\":\"%s\"}", id, path, size);
     }
 }

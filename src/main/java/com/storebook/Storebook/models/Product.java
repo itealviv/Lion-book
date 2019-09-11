@@ -21,13 +21,13 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     private Author author;
+
+    /*@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "media_id")
@@ -40,6 +40,7 @@ public class Product {
         this.price = price;
         this.title = title;
         this.description = description;
+        this.author = author;
         /*this.category = category;
         this.author = author;
         this.media = media;*/

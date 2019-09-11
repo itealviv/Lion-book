@@ -22,7 +22,7 @@ public class ProductService {
 
     public void updateProduct(Product product) {productDao.save(product);}*/
 
-    private List<Product> getAllProducts() { return productDao.findAll(); }
+    public List<Product> getAllProducts() { return productDao.findAll(); }
 
     public Product getProduct(int id) { return productDao.getOne(id); }
 

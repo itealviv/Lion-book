@@ -15,6 +15,4 @@ public interface MediaRepository extends JpaRepository<Media, Integer> {
 
     @Override
     Media getOne(Integer integer);
-
-
 }

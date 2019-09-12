@@ -33,6 +33,10 @@ public class Product {
     @JoinColumn(name = "media_id")
     private Media media;*/
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "media_id")
+    private Media media;
+
     public Product() {
     }
 
@@ -78,21 +82,21 @@ public class Product {
 //        this.category = category;
 //    }
 //
-//    public Author getAuthor() {
-//        return author;
-//    }
+    public Author getAuthor() {
+        return author;
+    }
 //
-//    public void setAuthor(Author author) {
-//        this.author = author;
-//    }
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 //
-//    public Media getMedia() {
-//        return media;
-//    }
+    public Media getMedia() {
+        return media;
+    }
 //
-//    public void setMedia(Media media) {
-//        this.media = media;
-//    }
+    public void setMedia(Media media) {
+        this.media = media;
+    }
 
     public int getId() {
         return id;

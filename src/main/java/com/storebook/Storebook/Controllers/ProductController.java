@@ -1,6 +1,5 @@
 package com.storebook.Storebook.Controllers;
 
-import com.storebook.Storebook.dao.ProductRepository;
 import com.storebook.Storebook.models.Product;
 import com.storebook.Storebook.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -7,10 +7,4 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AuthorRepository extends JpaRepository<Author, Integer> {
-    @Override
-    List<Author> findAll();
-
-    @Override
-    Author getOne(Integer integer);
-}
+public interface AuthorRepository extends JpaRepository<Author, Integer> {}

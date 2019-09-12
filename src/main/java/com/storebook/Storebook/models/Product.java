@@ -1,7 +1,9 @@
 package com.storebook.Storebook.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 
@@ -25,6 +27,7 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
+    @JsonBackReference
     private Author author;
 
     /*@ManyToOne(fetch = FetchType.LAZY)
@@ -37,6 +40,7 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "media_id")
+    @JsonManagedReference
     private Media media;
 
     public Product() {

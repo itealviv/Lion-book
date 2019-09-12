@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "Author")
 @Table(name = "authors")
@@ -34,12 +35,29 @@ public class Author {
         this.media = media;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "author", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Product> products;
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public void addProduct(Product product) {
+        this.products.add(product);
+    }
+
     public Author() {
     }
 
-    public Author(String title, String description) {
+    public Author(String title, String description, List<Product> products) {
         this.title = title;
         this.description = description;
+        this.products = products;
     }
 
     public String getTitle() {

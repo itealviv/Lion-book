@@ -1,12 +1,14 @@
 package com.storebook.Storebook.models;
 
-import lombok.Data;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 
 @Entity
 @Table(name = "products")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +35,7 @@ public class Product {
     @JoinColumn(name = "media_id")
     private Media media;*/
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "media_id")
     private Media media;
 
@@ -45,9 +47,10 @@ public class Product {
         this.title = title;
         this.description = description;
         this.author = author;
+        this.media = media;
         /*this.category = category;
         this.author = author;
-        this.media = media;*/
+        */
     }
 
     public double getPrice() {

@@ -1,7 +1,6 @@
 package com.storebook.Storebook.dao;
 
 import com.storebook.Storebook.models.Author;
-import com.storebook.Storebook.models.Media;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

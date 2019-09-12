@@ -1,10 +1,13 @@
 package com.storebook.Storebook.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -21,6 +24,23 @@ public class Media implements Serializable {
 
     @Column(name = "size")
     private int size;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "media", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Author> authors;
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+    public void addAuthor(Author author) {
+        this.authors.add(author);
+    }
+
 
     public Media(String asd, int i) {
         this.path = asd;

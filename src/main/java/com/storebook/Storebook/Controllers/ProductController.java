@@ -20,7 +20,12 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}")
-    public Product getMediaById(@PathVariable int id) {
+    public Product getProductById(@PathVariable int id) {
+        return productService.getProduct(id);
+    }
+
+    @GetMapping("/product/{id}/author")
+    public Product getProductAuthorById(@PathVariable int id) {
         return productService.getProduct(id);
     }
 

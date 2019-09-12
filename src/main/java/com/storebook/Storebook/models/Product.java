@@ -27,7 +27,7 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
-    @JsonBackReference
+    @JsonManagedReference
     private Author author;
 
     /*@ManyToOne(fetch = FetchType.LAZY)

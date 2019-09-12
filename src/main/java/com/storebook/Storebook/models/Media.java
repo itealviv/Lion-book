@@ -30,6 +30,7 @@ public class Media implements Serializable {
     private List<Author> authors;
 
     public List<Author> getAuthors() {
+
         return authors;
     }
 

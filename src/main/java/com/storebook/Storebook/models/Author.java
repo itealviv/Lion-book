@@ -36,7 +36,7 @@ public class Author {
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonBackReference
     private List<Product> products;
 
     public List<Product> getProducts() {

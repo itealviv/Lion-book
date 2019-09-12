@@ -26,5 +26,9 @@ public class ProductService {
 
     public Product getProduct(int id) { return productDao.getOne(id); }
 
+    public List<Product> findAllByAuthor(int authorId) {
+        return productDao.getAllByAuthor_Id(authorId);
+    }
+
 
 }

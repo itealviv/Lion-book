@@ -13,7 +13,10 @@ public class MediaService {
     @Autowired
     private MediaRepository mediaRepository;
 
+
     public List<Media> getAllMedia() { return mediaRepository.findAll(); }
 
+
     public Media getById(int id) { return mediaRepository.getOne(id); }
+
 }

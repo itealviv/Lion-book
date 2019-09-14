@@ -1,6 +1,5 @@
 package com.storebook.Storebook.Controllers;
 
-import com.storebook.Storebook.dao.ProductRepository;
 import com.storebook.Storebook.models.Product;
 import com.storebook.Storebook.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,12 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}")
-    public Product getMediaById(@PathVariable int id) {
+    public Product getProductById(@PathVariable int id) {
+        return productService.getProduct(id);
+    }
+
+    @GetMapping("/product/{id}/author")
+    public Product getProductAuthorById(@PathVariable int id) {
         return productService.getProduct(id);
     }
 

@@ -71,7 +71,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>13</source>
+                    <source>12</source>
                     <target>12</target>
                 </configuration>
             </plugin>

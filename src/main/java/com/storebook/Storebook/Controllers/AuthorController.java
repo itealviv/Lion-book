@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
+@CrossOrigin(origins = "*", value = "*")
 @RestController
 public class AuthorController {
     @Autowired
@@ -23,7 +23,7 @@ public class AuthorController {
     @Autowired
     private ProductService productService;
 
-
+    @CrossOrigin(origins = "*", value = "*")
     @GetMapping("/authors")
     public ResponseEntity<List<Author>>  getAuthors() {
         HttpHeaders headers = new HttpHeaders();

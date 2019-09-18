@@ -20,15 +20,15 @@ public class AuthorController {
     @Autowired
     private ProductService productService;
 
-    @CrossOrigin(origins = "http://store-book.tk, http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/authors")
     public List<Author> getAuthors() {return authorService.getAllAuthors();}
 
-    @CrossOrigin(origins = "http://store-book.tk, http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/author/{id}")
     public Author getAuthor(@PathVariable int id) { return authorService.getById(id);}
 
-    @CrossOrigin(origins = "http://store-book.tk, http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/author/{id}/books")
     public List<Product> getProducts(@PathVariable int id) { return productService.findAllByAuthor(id);}
 

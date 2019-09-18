@@ -15,19 +15,19 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @CrossOrigin(origins = "http://store-book.tk, http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/products")
     public List<Product> getMedia() {
         return productService.getAllProducts();
     }
 
-    @CrossOrigin(origins = "http://store-book.tk, http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/product/{id}")
     public Product getProductById(@PathVariable int id) {
         return productService.getProduct(id);
     }
 
-    @CrossOrigin(origins = "http://store-book.tk, http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/product/{id}/author")
     public Product getProductAuthorById(@PathVariable int id) {
         return productService.getProduct(id);

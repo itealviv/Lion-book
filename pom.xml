@@ -70,9 +70,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version></version>
                 <configuration>
                     <source>13</source>
-                    <target>13</target>
+                    <target>12</target>
                 </configuration>
             </plugin>
             <plugin>

@@ -23,7 +23,6 @@ public class AuthorController {
     @Autowired
     private ProductService productService;
 
-    @CrossOrigin
     @GetMapping("/authors")
     public ResponseEntity<List<Author>>  getAuthors() {
         HttpHeaders headers = new HttpHeaders();
@@ -32,11 +31,9 @@ public class AuthorController {
         return new ResponseEntity<List<Author>>(authorService.getAllAuthors(),headers, HttpStatus.OK);
     }
 
-    @CrossOrigin
     @GetMapping("/author/{id}")
     public Author getAuthor(@PathVariable int id) { return authorService.getById(id);}
 
-    @CrossOrigin
     @GetMapping("/author/{id}/books")
     public List<Product> getProducts(@PathVariable int id) { return productService.findAllByAuthor(id);}
 

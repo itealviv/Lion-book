@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@CrossOrigin(origins = "*", value = "*")
+@CrossOrigin
 @RestController
 public class AuthorController {
     @Autowired
@@ -23,7 +23,7 @@ public class AuthorController {
     @Autowired
     private ProductService productService;
 
-    @CrossOrigin(origins = "*", value = "*")
+    @CrossOrigin
     @GetMapping("/authors")
     public ResponseEntity<List<Author>>  getAuthors() {
         HttpHeaders headers = new HttpHeaders();
@@ -32,11 +32,11 @@ public class AuthorController {
         return new ResponseEntity<List<Author>>(authorService.getAllAuthors(),headers, HttpStatus.OK);
     }
 
-
+    @CrossOrigin
     @GetMapping("/author/{id}")
     public Author getAuthor(@PathVariable int id) { return authorService.getById(id);}
 
-
+    @CrossOrigin
     @GetMapping("/author/{id}/books")
     public List<Product> getProducts(@PathVariable int id) { return productService.findAllByAuthor(id);}
 

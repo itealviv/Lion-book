@@ -9,22 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
+@CrossOrigin
 @RestController
 public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @CrossOrigin
     @GetMapping("/products")
     public List<Product> getMedia() {
         return productService.getAllProducts();
     }
 
+    @CrossOrigin
     @GetMapping("/product/{id}")
     public Product getProductById(@PathVariable int id) {
         return productService.getProduct(id);
     }
 
+    @CrossOrigin
     @GetMapping("/product/{id}/author")
     public Product getProductAuthorById(@PathVariable int id) {
         return productService.getProduct(id);

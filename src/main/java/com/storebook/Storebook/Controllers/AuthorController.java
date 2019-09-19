@@ -28,9 +28,12 @@ public class AuthorController {
         return authorService.getAllAuthors();
     }
 
-
     @GetMapping("/author/{id}")
-    public Author getAuthor(@PathVariable int id) { return authorService.getById(id);}
+    public Author getAuthor(@PathVariable int id) {
+        Author author = authorService.getById(id);
+        author.setProducts(productService.findAllByAuthor(id));
+        return author;
+    }
 
 
     @GetMapping("/author/{id}/books")

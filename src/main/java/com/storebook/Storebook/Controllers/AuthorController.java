@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@CrossOrigin
+
 @RestController
 public class AuthorController {
     @Autowired
@@ -24,11 +24,8 @@ public class AuthorController {
     private ProductService productService;
 
     @GetMapping("/authors")
-    public ResponseEntity<List<Author>>  getAuthors() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Access-Control-Allow-Origin", "*");
-
-        return new ResponseEntity<List<Author>>(authorService.getAllAuthors(),headers, HttpStatus.OK);
+    public List<Author>  getAuthors() {
+        return authorService.getAllAuthors();
     }
 
     @GetMapping("/author/{id}")

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
+@CrossOrigin
 @RestController
 public class ProductController {
     @Autowired

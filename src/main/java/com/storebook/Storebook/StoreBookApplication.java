@@ -9,8 +9,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.storebook.Storebook.models")
 @EnableJpaRepositories("com.storebook.Storebook.dao")
 public class StoreBookApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(StoreBookApplication.class, args);
-
-	}
+	public static void main(String[] args) { SpringApplication.run(StoreBookApplication.class, args);}
 }

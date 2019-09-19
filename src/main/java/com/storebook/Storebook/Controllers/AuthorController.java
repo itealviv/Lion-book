@@ -23,6 +23,7 @@ public class AuthorController {
     @Autowired
     private ProductService productService;
 
+    @CrossOrigin
     @GetMapping("/authors")
     public List<Author>  getAuthors() {
         return authorService.getAllAuthors();

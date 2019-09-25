@@ -11,7 +11,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n"/>
         </Console>
-        <File name="MyFile" fileName="E:/LOGS/app.log">
+        <File name="MyFile" fileName="${env:LOG_PATH}/app.log">
             <PatternLayout pattern="%d %p %c [%M] %m%n"/>
         </File>
     </Appenders>

@@ -1,12 +1,10 @@
 package com.storebook.Storebook.Controllers;
 
+import com.storebook.Storebook.loggers.LoggerInterface;
 import com.storebook.Storebook.models.Author;
 import com.storebook.Storebook.models.Product;
 import com.storebook.Storebook.services.AuthorService;
 import com.storebook.Storebook.services.ProductService;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +16,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-public class AuthorController {
-    final Level DIAG = Level.forName("DIAG", 50);
-
-    private static final Logger LOGGER = LogManager.getLogger("AuthorController");
+public class AuthorController implements LoggerInterface{
 
     @Autowired
     private AuthorService authorService;
@@ -33,7 +28,7 @@ public class AuthorController {
 
     @GetMapping("/authors")
     public List<Author>  getAuthors() {
-        LOGGER.log(DIAG,"GET authors");
+        LoggerInterface.getLogger("AuthorController").log(DIAG,"GET authors");
         return authorService.getAllAuthors();
     }
 

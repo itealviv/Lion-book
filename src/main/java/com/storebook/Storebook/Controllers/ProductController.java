@@ -2,6 +2,8 @@ package com.storebook.Storebook.Controllers;
 
 import com.storebook.Storebook.models.Product;
 import com.storebook.Storebook.services.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +14,13 @@ import java.util.List;
 @CrossOrigin
 @RestController
 public class ProductController {
+
     @Autowired
     private ProductService productService;
 
     @GetMapping("/products")
     public List<Product> getMedia() {
+
         return productService.getAllProducts();
     }
 

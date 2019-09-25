@@ -1,5 +1,6 @@
 package com.storebook.Storebook.Controllers;
 
+import com.storebook.Storebook.loggers.LoggerInterface;
 import com.storebook.Storebook.models.Author;
 import com.storebook.Storebook.models.Product;
 import com.storebook.Storebook.services.AuthorService;
@@ -12,9 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @CrossOrigin
 @RestController
-public class AuthorController {
+public class AuthorController implements LoggerInterface{
+
     @Autowired
     private AuthorService authorService;
 
@@ -25,13 +28,13 @@ public class AuthorController {
 
     @GetMapping("/authors")
     public List<Author>  getAuthors() {
+        LoggerInterface.getLogger("AuthorController").log(DIAG,"GET authors");
         return authorService.getAllAuthors();
     }
 
     @GetMapping("/author/{id}")
     public Author getAuthor(@PathVariable int id) {
         Author author = authorService.getById(id);
-        author.setProducts(productService.findAllByAuthor(id));
         return author;
     }
 

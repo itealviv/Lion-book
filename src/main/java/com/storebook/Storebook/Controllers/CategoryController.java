@@ -22,5 +22,6 @@ public class CategoryController {
     public List<Category> getCategory() {
         LoggerInterface.getLogger("CategoryController").log(DIAG, "GET categories");
         return categoryService.getAllCategories();
+
     }
 }

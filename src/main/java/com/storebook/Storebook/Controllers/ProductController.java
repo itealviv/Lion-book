@@ -35,6 +35,7 @@ public class ProductController {
     public void deleteProduct(@PathVariable int id) {
 
     }
+
     @PostMapping("/products/add")
     String newProduct(@RequestBody Product newProduct) throws URISyntaxException {
 
@@ -42,11 +43,17 @@ public class ProductController {
     }
 
     @PutMapping("/products/{id}")
-    String  replaceProduct(@RequestBody Product newProduct) throws URISyntaxException {
-
+    String replaceProduct(@RequestBody Product newProduct) throws URISyntaxException {
 
 
         return "{\"result\":\"ok\"}";
     }
 
+    @DeleteMapping("/employees/{id}")
+    String deleteProduct(@PathVariable Long id) {
+
+
+        return "{\"result\":\"ok\"}";
+
+    }
 }

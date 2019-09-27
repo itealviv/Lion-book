@@ -3,8 +3,12 @@ package com.storebook.Storebook.Controllers;
 import com.storebook.Storebook.models.Product;
 import com.storebook.Storebook.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 @CrossOrigin
 @RestController
@@ -29,8 +33,20 @@ public class ProductController {
 
     @DeleteMapping("/products/{id}")
     public void deleteProduct(@PathVariable int id) {
-        //do something here
+
+    }
+    @PostMapping("/products/add")
+    String newProduct(@RequestBody Product newProduct) throws URISyntaxException {
+
+        return "{\"result\":\"ok\"}";
     }
 
+    @PutMapping("/products/{id}")
+    String  replaceProduct(@RequestBody Product newProduct) throws URISyntaxException {
+
+
+
+        return "{\"result\":\"ok\"}";
+    }
 
 }

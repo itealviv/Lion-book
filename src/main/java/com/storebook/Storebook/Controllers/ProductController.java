@@ -13,6 +13,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+@CrossOrigin(origins = "http://store-book.tk", maxAge = 3600)
 @RestController
 public class ProductController {
 

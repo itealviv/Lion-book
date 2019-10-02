@@ -1,4 +1,6 @@
 package com.storebook.Storebook.models;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,8 +11,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn (name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    @JsonManagedReference
     private User user;
 
     @Column(name = "total")
@@ -22,13 +25,11 @@ public class Order {
     @Column (name = "ip")
     private String ip;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn (name = "payment_method_id")
-    private PaymentMethod paymentMethod;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
-    private Order order;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "payment_method_id")
+    @JsonManagedReference
+    private PaymentMethod paymentMethod;
 
     @Column (name = "order_user")
     private String orderUser;
@@ -41,7 +42,6 @@ public class Order {
         this.date = date;
         this.ip = ip;
         this.paymentMethod = paymentMethod;
-        this.order = order;
         this.orderUser = orderUser;
     }
 
@@ -59,9 +59,6 @@ public class Order {
 
     public PaymentMethod getPaymentMethod() { return paymentMethod; }
     public void setPaymentMethod (PaymentMethod paymentMethod) { this.paymentMethod = paymentMethod; }
-
-    public Order getOrder() { return order; }
-    public void setOrder (Order order) { this.order = order; }
 
     public String getOrderUser() { return orderUser; }
     public void setOrderUser (String orderUser) { this.orderUser = orderUser; }

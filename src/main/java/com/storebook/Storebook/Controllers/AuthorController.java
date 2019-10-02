@@ -31,7 +31,7 @@ public class AuthorController implements LoggerInterface{
     @CrossOrigin
     @GetMapping("/authors")
     public List<Author>  getAuthors() {
-        LoggerInterface.getLogger("AuthorController").log(DIAG,"GET authors");
+        LoggerInterface.getLogger("AuthorController").log(DIAG,"GET authors with @CrossOrigin");
         return authorService.getAllAuthors();
     }
 

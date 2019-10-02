@@ -18,16 +18,13 @@ import static com.storebook.Storebook.loggers.LoggerInterface.DIAG;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-
     @GetMapping("/categories")
     public List<Category> getCategory() {
         LoggerInterface.getLogger("CategoryController").log(DIAG, "GET categories");
         return categoryService.getAllCategories();
-
     }
     @GetMapping("/category/{id}")
     public Category getCategory(@PathVariable int id) {
-        Category category = categoryService.getById(id);
-        return category;
+        return categoryService.getById(id);
     }
 }

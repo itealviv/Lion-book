@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://store-book.tk", maxAge = 3600)
+@CrossOrigin
 @RestController
 public class MediaController {
     @Autowired

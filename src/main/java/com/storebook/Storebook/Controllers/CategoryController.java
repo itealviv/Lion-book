@@ -13,7 +13,7 @@ import java.util.List;
 
 import static com.storebook.Storebook.loggers.LoggerInterface.DIAG;
 
-@CrossOrigin(origins = "http://store-book.tk", maxAge = 3600)
+@CrossOrigin
 @RestController
 public class CategoryController {
     @Autowired

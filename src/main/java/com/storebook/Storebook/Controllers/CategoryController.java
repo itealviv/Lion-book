@@ -13,7 +13,6 @@ import java.util.List;
 
 import static com.storebook.Storebook.loggers.LoggerInterface.DIAG;
 
-@CrossOrigin
 @RestController
 public class CategoryController {
     @Autowired

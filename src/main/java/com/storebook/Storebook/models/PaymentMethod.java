@@ -1,4 +1,6 @@
 package com.storebook.Storebook.models;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 
@@ -21,8 +23,9 @@ public class PaymentMethod {
     @Column (name = "api_private_key")
     private String apiPrivateKey;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "media_id")
+    @JsonManagedReference
     private Media media;
 
     public PaymentMethod() {

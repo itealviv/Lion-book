@@ -11,8 +11,8 @@ import java.util.List;
 public class CategoryService {
 
     private CategoryRepository categoryRepository;
-    
-@Autowired
+
+    @Autowired
     public CategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }

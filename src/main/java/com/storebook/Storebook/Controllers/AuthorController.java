@@ -27,22 +27,17 @@ public class AuthorController implements LoggerInterface{
         this.authorService = authorService;
         this.productService = productService;
     }
-
     @CrossOrigin
     @GetMapping("/authors")
     public List<Author>  getAuthors() {
         LoggerInterface.getLogger("AuthorController").log(DIAG,"GET authors with @CrossOrigin");
         return authorService.getAllAuthors();
     }
-
     @GetMapping("/author/{id}")
     public Author getAuthor(@PathVariable int id) {
-        Author author = authorService.getById(id);
-        return author;
+        return  authorService.getById(id);
     }
-
-
     @GetMapping("/author/{id}/books")
-    public List<Product> getProducts(@PathVariable int id) { return productService.findAllByAuthor(id);}
-
+    public List<Product> getProducts(@PathVariable int id) {
+        return productService.findAllByAuthor(id);}
 }

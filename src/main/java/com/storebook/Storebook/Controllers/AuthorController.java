@@ -18,13 +18,15 @@ import java.util.List;
 @RestController
 public class AuthorController implements LoggerInterface{
 
-    @Autowired
     private AuthorService authorService;
 
-    @Autowired
     private ProductService productService;
 
-
+    @Autowired
+    public AuthorController(AuthorService authorService, ProductService productService) {
+        this.authorService = authorService;
+        this.productService = productService;
+    }
 
     @GetMapping("/authors")
     public List<Author>  getAuthors() {

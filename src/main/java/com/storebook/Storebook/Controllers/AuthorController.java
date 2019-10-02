@@ -28,6 +28,7 @@ public class AuthorController implements LoggerInterface{
         this.productService = productService;
     }
 
+    @CrossOrigin
     @GetMapping("/authors")
     public List<Author>  getAuthors() {
         LoggerInterface.getLogger("AuthorController").log(DIAG,"GET authors");

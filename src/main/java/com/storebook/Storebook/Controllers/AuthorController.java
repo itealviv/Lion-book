@@ -37,10 +37,8 @@ public class AuthorController implements LoggerInterface{
 
     @GetMapping("/author/{id}")
     public Author getAuthor(@PathVariable int id) {
-        Author author = authorService.getById(id);
-        return author;
+        return  authorService.getById(id);
     }
-
 
     @GetMapping("/author/{id}/books")
     public List<Product> getProducts(@PathVariable int id) { return productService.findAllByAuthor(id);}

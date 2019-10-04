@@ -1,7 +1,6 @@
 package com.storebook.Storebook.models;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -30,14 +29,6 @@ public class Product {
     @JsonManagedReference
     private Author author;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "media_id")
-    private Media media;*/
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "media_id")
     @JsonManagedReference
@@ -52,9 +43,6 @@ public class Product {
         this.description = description;
         this.author = author;
         this.media = media;
-        /*this.category = category;
-        this.author = author;
-        */
     }
 
     public double getPrice() {
@@ -84,15 +72,18 @@ public class Product {
     public Author getAuthor() {
         return author;
     }
-//
+
+    //
     public void setAuthor(Author author) {
         this.author = author;
     }
-//
+
+    //
     public Media getMedia() {
         return media;
     }
-//
+
+    //
     public void setMedia(Media media) {
         this.media = media;
     }
